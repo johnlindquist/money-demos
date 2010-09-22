@@ -13,16 +13,16 @@ package view
     {
         private var readout:Readout;
 
+        private var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
+
         public function ReadoutMediator(readout:Readout)
         {
             this.readout = readout;
 
             $(CreateBallCommand).watch(onBallCreated)
         }
-
         private function onBallCreated():void
         {
-            var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
             readout.setText('Click count: ' + statsModel.ballClickCount);
         }
     }

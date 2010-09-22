@@ -12,11 +12,11 @@ package controller
 
     public class StartupCommand
     {
+        private var context:Sprite = $(Sprite).get() as Sprite;
+        
         public function execute():void
         {
-            var context:Sprite = $(Sprite).get() as Sprite;
             var readout:Readout = $(Readout).mediate(ReadoutMediator) as Readout;
-            
             context.addChild(readout);
 
             $(CreateBallCommand).run();
