@@ -13,8 +13,9 @@ package view
 
     public class BallMediator
     {
+        private var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
         private var ball:Ball;
-        
+
         public function BallMediator(ball:Ball)
         {
             this.ball = ball;
@@ -26,10 +27,8 @@ package view
         {
             ball.poke();
         }
-
         private function onBallClick(event:MouseEvent):void
         {
-            var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
             statsModel.recordBallClick();
 
             $(CreateBallCommand).run();
