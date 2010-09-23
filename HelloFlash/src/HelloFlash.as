@@ -6,8 +6,8 @@ package
 
     public class HelloFlash extends Sprite
     {
-        //This demo duplicates the functionality of the Robotlegs "Hello Flash" demo
-        
+        public static const CREATE_BALL:String = "createBall";
+
         public function HelloFlash()
         {
             $(Sprite, this).set();

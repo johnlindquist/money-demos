@@ -13,7 +13,8 @@ package view
 
     public class BallMediator
     {
-        private var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
+        include "../../includes/inject"
+        private var statsModel:StatsModel;
         private var ball:Ball;
 
         public function BallMediator(ball:Ball)
@@ -30,8 +31,8 @@ package view
         private function onBallClick(event:MouseEvent):void
         {
             statsModel.recordBallClick();
-
-            $(CreateBallCommand).run();
+            //fires off CreateBallCommand
+            $().dispatch(HelloFlash.CREATE_BALL);
         }
     }
 }

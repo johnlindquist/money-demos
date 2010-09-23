@@ -11,14 +11,13 @@ package view
 
     public class ReadoutMediator
     {
+        include "../../includes/inject"
         private var readout:Readout;
-
-        private var statsModel:StatsModel = $(StatsModel).get() as StatsModel;
+        private var statsModel:StatsModel;
 
         public function ReadoutMediator(readout:Readout)
         {
             this.readout = readout;
-
             $(CreateBallCommand).watch(onBallCreated)
         }
         private function onBallCreated():void

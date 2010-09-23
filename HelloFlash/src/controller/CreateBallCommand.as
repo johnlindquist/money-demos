@@ -12,14 +12,15 @@ package controller
 
     public class CreateBallCommand
 	{
-        private var context:Sprite = $(Sprite).get() as Sprite;
-        
+        include "../../includes/inject"
+        private var sprite:Sprite;
+
         public function execute():void
         {
             var ball:Ball = $(Ball).mediate(BallMediator) as Ball;
             ball.x = Math.random() * 500;
             ball.y = Math.random() * 375;
-            context.addChild(ball);
+            sprite.addChild(ball);
 		}
 	}
 }
